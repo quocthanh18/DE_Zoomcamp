@@ -1,0 +1,12 @@
+services:
+  pgdatabase:
+    image: postgres
+    environment:
+      - POSTGRES_USER=quocthanh
+      - POSTGRES_PASSWORD=quocthanh1804
+      - POSTGRES_DB=ny_taxi
+    volumes:
+      - ./ny_taxi_postgres_data:/var/lib/postgresql/data:rw
+    ports:
+      - "5433:5432"
+    networks:
