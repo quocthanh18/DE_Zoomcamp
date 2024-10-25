@@ -1,0 +1,25 @@
+services:
+  pgdatabase:
+    image: postgres
+    env_file:
+      - .env
+    volumes:
+      - /home/quocthanh/DE_Zoomcamp/ny_taxi_postgres_data:/var/lib/postgresql/data:rw
+    ports:
+      - "5433:5432"
+    networks:
+      - de_zoomcamp
+  ingestion:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      pgdatabase:
+        condition: service_started
+    env_file:
+      - .env
+    networks:
+      - de_zoomcamp
+networks:
+  de_zoomcamp:
+    name: de_zoomcamp
