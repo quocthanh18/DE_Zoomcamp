@@ -1,0 +1,77 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - flawless_scroll
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: extract
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: extract
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - festive_shape
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: flawless scroll
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - extract
+  uuid: flawless_scroll
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: festive shape
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - flawless_scroll
+  uuid: festive_shape
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-10-27 04:09:55.211784+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: Week2_DE_Zoomcamp
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: week2_de_zoomcamp
+variables:
+  prefix: https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/
+  suffix: green_tripdata_2020-
+variables_dir: /home/quocthanh/.mage_data/mage_pipeline
+widgets: []

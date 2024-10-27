@@ -1,0 +1,16 @@
+services:
+  etl_db:
+    image: postgres
+    env_file:
+      - .env
+    ports:
+      - "5433:5432"
+  mage:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - etl_db
+    ports:
+      - "6789:6789"
+
