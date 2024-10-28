@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: staging
+    database: taxi_rides_ny
+    schema: trips_data
+
+    tables:
+      - name: yellow_tripdata
+      - name: green_tripdata
+        columns:
+          - name: VendorID
+            quoting: true
+      - name: fhv_tripdata
+
+  
